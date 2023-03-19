@@ -4,7 +4,7 @@ import telebot
 import openai
 from datetime import datetime
 from sys import platform
-from botapiconfig import openaiapi, telegrambotapi
+from api_keys import openaiapi, telegrambotapi
 
 bot = telebot.TeleBot(telegrambotapi)
 openai.api_key = openaiapi
