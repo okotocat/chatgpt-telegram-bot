@@ -1,2 +1,6 @@
-telegrambotapi = "YOUR_TOKEN"
-openaiapi = "YOUR_TOKEN"
+telegrambotapi = "*"
+openaiapi = "*"
+user = '*'
+password = '*'
+host = '*'
+database = '*'
