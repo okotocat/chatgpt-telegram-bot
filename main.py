@@ -9,6 +9,7 @@ from api_keys import openaiapi, telegrambotapi, user, password, host, database
 
 bot = telebot.TeleBot(telegrambotapi)
 openai.api_key = openaiapi
+logfile = "var/log/some_file_you_want"						#change this line
 
 @bot.message_handler(commands=['start','help'])
 def start_message(message):
@@ -19,7 +20,7 @@ def chat_handler(message):
 	bot_base_message = bot.send_message(message.chat.id, '♻️[GPT] Loading...')
 	try:
 		gpt_reply = openai.ChatCompletion.create(model='gpt-3.5-turbo', messages=[{'role': 'user', 'content': command}],)
-	except openai.error.OpenAIError as e:				#OpenAI exception bout server load
+	except openai.error.OpenAIError as e:					#OpenAI exception bout server load
 		print(e)
 		bot.reply_to(message, text='⚠Heavy load on OpenAI servers! Try again')
 	bot.edit_message_text('✅[GPT] Done!', chat_id=message.chat.id, message_id=bot_base_message.message_id)
@@ -46,7 +47,7 @@ def chat_handler(message):
 			mycursor.close()
 			mysqlconnection.close()
 		push_to_db(message)
-		f = open("/home/kotk/nginx_files/log.txt","a")
+		f = open(logfie,"a")
 		f.writelines('\n')
 		f.writelines('userID: ')
 		f.writelines(str(message.from_user.id))
