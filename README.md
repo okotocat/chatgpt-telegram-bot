@@ -9,7 +9,7 @@ Redefine * signs in api_keys.py for yours tokens and database.
 
 # How it works?
 Python script, using [PyTelegramBotApi](https://pypi.org/project/pyTelegramBotAPI/) as api, for connecting to Telegram via api token.
-[MySQL](https://pypi.org/project/mysql/) for database connection, and [OpenAI](https://pypi.org/project/openai/) for connection with OpenAI's ChatGPT AI.
+[MySQL-Connector-Python](https://pypi.org/project/mysql-connector-python/) for database connection, and [OpenAI](https://pypi.org/project/openai/) for connection with OpenAI's ChatGPT AI.
 
 ## Contacts
 If you want to help, contribute, request a feature, feel free to PM me in telegram: @tttriot
